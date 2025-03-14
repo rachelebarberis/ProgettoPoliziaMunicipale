@@ -1,0 +1,30 @@
+﻿@model List<PuntiTrasgressoreViewModel>
+@{
+    ViewData["Title"] = "Punti Decurtati per Trasgressore";
+}
+
+<h2>Punti Decurtati per Trasgressore</h2>
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Codice Fiscale</th>
+            <th>Punti Totali Decurtati</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Cognome</td>
+                <td>@item.Nome</td>
+                <td>@item.CodiceFiscale</td>
+                <td>@item.PuntiTotali</td>
+            </tr>
+        }
+    </tbody>
+</table>
