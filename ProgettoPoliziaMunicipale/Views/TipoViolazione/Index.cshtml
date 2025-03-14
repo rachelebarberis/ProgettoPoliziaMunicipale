@@ -1,0 +1,36 @@
+﻿@model List<TipoViolazione>
+
+@{
+    ViewData["Title"] = "Elenco Tipi Violazione";
+}
+
+<h2>Elenco Violazione</h2>
+
+<p>
+    <a asp-action="Add" class="btn btn-primary">Inserisci Nuovo Tipo di Violazione</a>
+</p>
+
+<div class="container">
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Descrizione</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violazione in Model)
+        {
+            <tr>
+                <td>@violazione.Descrizione</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@violazione.IdViolazione" class="btn btn-sm btn-warning">Edit</a>
+               
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@model List<Anagrafica>
+
+@{
+	ViewData["Title"] = "Anagrafica";
+}
+
+<h2>Elenco:</h2>
+
+<div class="container">
+	<a asp-action="Add" class="btn btn-primary">Inserisci</a>
+	<div class="row">
+		@foreach (var anag in Model)
+		{
+			<div class="col-4">
+				<div class="card m-3">
+					<div class="card-text">@anag.Cognome</div>
+					<div class="card-text">@anag.Nome</div>
+					<div class="card-text">@anag.Citta</div>
+					<div class="card-text">
+						@anag.Indirizzo
+					</div>
+					<div class="card-text">
+						@anag.Cap
+					</div>
+					<div class="card-text">
+						@anag.CodiceFiscale
+					</div>
+					<div>
+					<a asp-action="Edit" asp-route-id="@anag.IdAnagrafica" class="btn btn-sm btn-warning">Modifica</a>
+					<a asp-action="Delete" asp-route-id="@anag.IdAnagrafica" class="btn btn-sm btn-danger">Elimina</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+	</div>
+

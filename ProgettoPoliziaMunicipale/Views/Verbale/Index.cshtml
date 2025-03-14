@@ -1,0 +1,42 @@
+﻿@model List<VerbaleViewModel>
+
+@{
+    ViewData["Title"] = "Lista Verbali";
+}
+
+<h2>Lista Verbali</h2>
+<a asp-action="Add" class="btn btn-primary">Aggiungi Nuovo Verbale</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data Violazione</th>
+            <th>Indirizzo</th>
+            <th>Agente</th>
+            <th>Importo</th>
+            <th>Decurtamento Punti</th>
+            <th>Nome e Cognome</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var verbale in Model)
+        {
+            <tr>
+                <td>@verbale.DataViolazione.ToShortDateString()</td>
+                <td>@verbale.IndirizzoViolazione</td>
+                <td>@verbale.NominativoAgente</td>
+                <td>@verbale.Importo €</td>
+                <td>@verbale.DecurtamentoPunti</td>
+                <td>@verbale.NomeCognomeAnagrafica</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@verbale.IdVerbale" class="btn btn-info">Dettagli</a>
+                    <a asp-action="Edit" asp-route-id="@verbale.IdVerbale" class="btn btn-warning">Modifica</a>
+                 
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
