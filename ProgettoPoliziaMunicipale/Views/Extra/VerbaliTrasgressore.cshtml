@@ -3,31 +3,32 @@
     ViewData["Title"] = "Verbali per Trasgressore";
 }
 
-<h2>Verbali per Trasgressore</h2>
+<h2 class="text-center text-success fw-bold">Verbali per Trasgressore</h2>
 
-
-
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Cognome</th>
-            <th>Nome</th>
-            <th>Codice Fiscale</th>
-            <th>Numero Verbali</th>
-            <th>Importo Totale (€)</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Cognome</td>
-                <td>@item.Nome</td>
-                <td>@item.CodiceFiscale</td>
-                <td>@item.NumeroVerbali</td>
-                <td>@item.ImportoTotale.ToString("N2")</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
+<div class="container mt-4">
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered shadow-sm">
+            <thead class="bg-success text-white">
+                <tr>
+                    <th>Cognome</th>
+                    <th>Nome</th>
+                    <th>Codice Fiscale</th>
+                    <th>Numero Verbali</th>
+                    <th>Importo Totale (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var punti in Model)
+                {
+                    <tr>
+                        <td>@punti.Cognome</td>
+                        <td>@punti.Nome</td>
+                        <td>@punti.CodiceFiscale</td>
+                        <td class="fw-bold">@punti.NumeroVerbali</td>
+                        <td class="fw-bold text-danger">@punti.ImportoTotale.ToString("N2")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

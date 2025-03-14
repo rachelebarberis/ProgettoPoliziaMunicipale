@@ -135,7 +135,7 @@ namespace ProgettoPoliziaMunicipale.Services
         {
             return await _context.Verbales
                 .Include(v => v.IdAnagraficaNavigation)
-                .Where(v => v.DecurtamentoPunti > 10)
+                .Where(v => v.DecurtamentoPunti >= 10)
                 .Select(v => new ViolGraviViewModel
                 {
                     IdVerbale = v.IdVerbale,

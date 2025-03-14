@@ -2,55 +2,54 @@
     ViewData["Title"] = "Report";
 }
 
-<h2>Report</h2>
+
 
 <div class="row mt-4">
     <div class="col-md-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5>Report Trasgressori</h5>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Report Trasgressori</h5>
             </div>
             <div class="card-body">
                 <p>Visualizza il numero totale di verbali e l'importo complessivo per ogni trasgressore.</p>
-                <a asp-action="VerbaliTrasgressore" class="btn btn-primary">Visualizza</a>
+                <a asp-action="VerbaliTrasgressore" class="btn btn-outline-success">Visualizza</a>
             </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5>Punti Decurtati per Trasgressore</h5>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Punti Decurtati per Trasgressore</h5>
             </div>
             <div class="card-body">
                 <p>Visualizza il totale dei punti decurtati per ogni trasgressore.</p>
-                <a asp-action="PuntiTrasgressore" class="btn btn-primary">Visualizza</a>
+                <a asp-action="PuntiTrasgressore" class="btn btn-outline-success">Visualizza</a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row">
+<div class="row mt-4">
     <div class="col-md-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5>Violazioni con Decurtamento > 10 Punti</h5>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">Violazioni con Decurtamento > 10 Punti</h5>
             </div>
             <div class="card-body">
                 <p>Visualizza i dettagli delle violazioni con decurtamento punti superiore a 10.</p>
-                <a asp-action="Viol10Punti" class="btn btn-primary">Visualizza</a>
+                <a asp-action="Viol10Punti" class="btn btn-outline-danger">Visualizza</a>
             </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5>Violazioni con Importo > 400€</h5>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="mb-0">Violazioni con Importo > 400€</h5>
             </div>
             <div class="card-body">
                 <p>Visualizza i dettagli delle violazioni con importo superiore a 400€.</p>
-                <a asp-action="Viol400Euro" class="btn btn-primary">Visualizza</a>
+                <a asp-action="Viol400Euro" class="btn btn-outline-warning">Visualizza</a>
             </div>
         </div>
     </div>
 </div>
-

@@ -1,37 +1,33 @@
 ﻿@model List<Anagrafica>
 
 @{
-	ViewData["Title"] = "Anagrafica";
+    ViewData["Title"] = "Anagrafica";
 }
 
-<h2>Elenco:</h2>
+<h2 style="text-align: center; color: #34495e; font-family: Arial, sans-serif;">Elenco</h2>
 
-<div class="container">
-	<a asp-action="Add" class="btn btn-primary">Inserisci</a>
-	<div class="row">
-		@foreach (var anag in Model)
-		{
-			<div class="col-4">
-				<div class="card m-3">
-					<div class="card-text">@anag.Cognome</div>
-					<div class="card-text">@anag.Nome</div>
-					<div class="card-text">@anag.Citta</div>
-					<div class="card-text">
-						@anag.Indirizzo
-					</div>
-					<div class="card-text">
-						@anag.Cap
-					</div>
-					<div class="card-text">
-						@anag.CodiceFiscale
-					</div>
-					<div>
-					<a asp-action="Edit" asp-route-id="@anag.IdAnagrafica" class="btn btn-sm btn-warning">Modifica</a>
-					<a asp-action="Delete" asp-route-id="@anag.IdAnagrafica" class="btn btn-sm btn-danger">Elimina</a>
-					</div>
-				</div>
-			</div>
-		}
-	</div>
-	</div>
+<div class="container" style="max-width: 1000px; margin: auto; background: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+    <a asp-action="Add" class="btn" style="display: block; width: max-content; margin: 10px auto 20px; padding: 10px 20px; background: #5dade2; color: white; border-radius: 5px; text-decoration: none; font-weight: bold;"> Inserisci</a>
 
+    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center;">
+        @foreach (var anag in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4" style="display: flex; justify-content: center;">
+                <div class="card" style="width: 100%; max-width: 320px; margin: 15px; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border: 1px solid #dee2e6; text-align: center;">
+                    <div class="card-body">
+                        <h5 style="color: #2c3e50; font-weight: bold; margin-bottom: 10px;">@anag.Cognome @anag.Nome</h5>
+                        <p style="margin: 5px 0; color: #555;"><strong>Città:</strong> @anag.Citta</p>
+                        <p style="margin: 5px 0; color: #555;"><strong>Indirizzo:</strong> @anag.Indirizzo</p>
+                        <p style="margin: 5px 0; color: #555;"><strong>CAP:</strong> @anag.Cap</p>
+                        <p style="margin: 5px 0; color: #555;"><strong>Codice Fiscale:</strong> @anag.CodiceFiscale</p>
+
+                        <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <a asp-action="Edit" asp-route-id="@anag.IdAnagrafica" class="btn" style="background: #f4d03f; color: #2c3e50; padding: 8px 12px; border-radius: 5px; text-decoration: none; font-weight: bold;"> Modifica</a>
+                            <a asp-action="Delete" asp-route-id="@anag.IdAnagrafica" class="btn" style="background: #e74c3c; color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none; font-weight: bold;"> Elimina</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -4,17 +4,18 @@
     ViewData["Title"] = "Inserisci Tipo Violazione";
 }
 
-<h2>Inserisci Nuovo Tipo di Violazione</h2>
+<h2 style="text-align: center; color: #34495e; font-family: Arial, sans-serif;">Inserisci Nuovo Tipo di Violazione</h2>
 
-<form asp-action="Add" method="post">
-    <div class="form-group">
-        <label asp-for="Descrizione" class="control-label">Descrizione</label>
-        <textarea asp-for="Descrizione" class="form-control" rows="4"></textarea>
-        <span asp-validation-for="Descrizione" class="text-danger"></span>
-    </div>
-    <div class="form-group mt-3">
-        <button type="submit" class="btn btn-primary">Salva</button>
-        <a asp-action="Index" class="btn btn-secondary">Annulla</a>
-    </div>
-</form>
-
+<div class="container" style="max-width: 600px; margin: auto; background: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+    <form asp-action="Add" method="post">
+        <div class="form-group">
+            <label asp-for="Descrizione" class="control-label" style="font-weight: bold; color: #34495e;">Descrizione</label>
+            <textarea asp-for="Descrizione" class="form-control" rows="4" style="border-radius: 5px; border: 1px solid #ccc;"></textarea>
+            <span asp-validation-for="Descrizione" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-3" style="text-align: center;">
+            <button type="submit" class="btn" style="background: #5dade2; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">💾 Salva</button>
+            <a asp-action="Index" class="btn" style="background: #95a5a6; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">❌ Annulla</a>
+        </div>
+    </form>
+</div>

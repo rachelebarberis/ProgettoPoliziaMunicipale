@@ -4,28 +4,30 @@
     ViewBag.Title = "Violazioni Oltre 400 Euro";
 }
 
-<h2>Elenco Verbali con più di 400 euro</h2>
+<h2 class="text-center text-danger fw-bold">Elenco Verbali con più di 400€</h2>
 
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Verbale N°</th>
-            <th>Data Violaz.</th>
-            <th>Trasgressore</th>
-            <th>Importo</th>
-        
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.IdVerbale</td>
-                <td>@item.DataViolazione.ToString("dd/MM/yyyy")</td>
-                <td>@item.NomeCognomeAnagrafica</td>
-                <td>@item.Importo</td>
-              
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container mt-4">
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered shadow-sm">
+            <thead class="bg-danger text-white">
+                <tr>
+                    <th>Verbale N°</th>
+                    <th>Data Violazione</th>
+                    <th>Trasgressore</th>
+                    <th>Importo (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdVerbale</td>
+                        <td>@item.DataViolazione.ToString("dd/MM/yyyy")</td>
+                        <td>@item.NomeCognomeAnagrafica</td>
+                        <td class="fw-bold text-danger">@item.Importo.ToString("N2")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
